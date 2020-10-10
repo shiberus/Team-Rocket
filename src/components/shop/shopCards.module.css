@@ -1,0 +1,4 @@
+.shopCards{
+  display: flex;
+  flex-wrap: wrap;
+}

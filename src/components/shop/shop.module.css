@@ -1,0 +1,13 @@
+.Shop{
+  display: grid;
+  grid-template-columns: 7.5% 0.6fr 1.4fr 7.5%;
+  grid-template-rows: 0.2fr 2.6fr 0.2fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "navBar navBar navBar navBar"
+    ". shopBars shopCards ."
+    ". . . .";
+}
+.navBar { grid-area: navBar; }
+.shopBars { grid-area: shopBars; }
+.shopCards { grid-area: shopCards; }

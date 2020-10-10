@@ -1,0 +1,43 @@
+.navBar{
+  background-color: #1d3557;
+  border-bottom: 1px solid #1d3557;
+}
+
+.brand{
+  color: #f1faee;
+}
+
+li{
+  margin-left: 20px;
+}
+
+.link{
+  cursor: pointer;
+  text-decoration: none;
+  color: #f1faee;
+}
+.link:hover{
+  text-decoration: none;
+  color: #a8dadc;
+}
+
+.btn{
+  color:white;
+  background-color: #e63946;
+  border-color: #e63946;
+  transition: 0.3s;
+}
+.btn:hover{
+  opacity: 0.75;
+}
+
+.evilInfo{
+  margin-left: 40px;
+  align-items: center;
+  justify-items: space-between;
+}
+
+.evilList{
+  display: flex;
+  align-items: center;
+}

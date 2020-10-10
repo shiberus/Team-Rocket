@@ -1,0 +1,47 @@
+.card{
+  background-color: #a8dadc;
+  border-radius: 10px;
+  border: 2px solid #457b9d;
+  margin: 20px;
+  width: 250px;
+  padding: 10px;
+  justify-content: center;
+  transition: 1s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.432);
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {transform: scale(1.15)}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.img{
+  border-radius: 10px;
+  background-color:rgb(241,250,238, 0.4);
+
+  margin: 5px;
+}
+
+.img img{
+  height: 200px;
+  width: 200px;
+}
+
+.data{
+  background-color: #f1faee;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.data p{
+  border-radius: 5px;
+  margin: 1px;
+}
+
+.data hr{
+  margin: 1px;
+}

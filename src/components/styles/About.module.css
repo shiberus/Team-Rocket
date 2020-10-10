@@ -1,0 +1,44 @@
+.About {
+  display: grid;
+  grid-template-columns: 7.5% 55% 30% 7.5%;
+  grid-template-rows: 1fr 4fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "left top top right"
+    "left text giovanniPic right"
+    "left bottom bottom right";
+  height: 93.7vh;
+  background-color: #f1faee;
+}
+.giovanniPic { grid-area: giovanniPic; }
+.text { grid-area: text; }
+.top { grid-area: top; }
+.bottom { grid-area: bottom; }
+.left { 
+  grid-area: left; 
+  background-color: #f1faee;
+  }
+.right {
+   grid-area: right;
+   background-color: #f1faee;
+  }
+
+  .gio{
+    height: 800px;
+  }
+
+  .motto{
+    background-color: rgb(230,57,70, 0.3);
+    border-radius: 30px;
+    padding: 20px;
+    margin: 80px;
+    margin-top: 20px;
+  }
+
+  .motto p{
+    font-style: italic;
+  }
+
+  .jumbo{
+    background-color: transparent;
+  }
