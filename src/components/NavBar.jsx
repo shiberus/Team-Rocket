@@ -17,7 +17,7 @@ export default function NavBar(){
           <Link to='/about' className={style.link}><span className={`nav-link`}>About us</span></Link> 
         </li>
         <li className="nav-item">
-        <Link to='/shop' className={style.link}> <span className={`nav-link`}>Shop</span> </Link>
+        <Link to='/shop' className={style.link}> <span className={`nav-link`}>Your Team</span> </Link>
         </li>
         <li className="nav-item">
         <Link to='/trafficking' className={style.link}> <span className={`nav-link `}>Hunt</span> </Link>

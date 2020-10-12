@@ -1,8 +1,15 @@
-import React, { useState } from'react';
+import React, { useState, useEffect } from'react';
 import style from './styles/NavBar.module.css'
 
-export default function TraficNavBar({meat, profit, onSearch, sellMeat, evil, setEvil}){
+export default function TraficNavBar({team, profit, onSearch, evil, setEvil}){
   const [pokemon, setPokemon] = useState('')
+  const [teamNames, setTeamNames] = useState([])
+
+  useEffect (() => {
+    setTeamNames(team.map(member => {console.log(member); return member.name}))
+    console.log(teamNames)
+  }, [team])
+
   return(
     <div className={style.navBar}>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,14 +22,11 @@ export default function TraficNavBar({meat, profit, onSearch, sellMeat, evil, se
           <li className={`nav-item ${style.evilInfo}`}>
            <span>Profit: ${profit}</span>
           </li>
-          {evil === 4 ? <li><button className={`btn btn-danger`} onClick={setEvil}>Activate Supreme Evil</button></li> : null}
+          {evil === 4 ? <li><button className={`btn btn-primary`} onClick={setEvil}>Activate Evil Deluxe</button></li> : null}
           {evil > 4 ? (
           <div className={style.evilList}>
           <li className={`nav-item ${style.evilInfo}`}>
-           <span>Meat: {meat}kg</span>
-          </li>
-          <li>
-          <button className={`btn ${style.btn}`} onClick={sellMeat} type="submit">Sell meat</button>
+           <span>Team: {teamNames.join(', ')}</span>
           </li>
           </div>
           ) : null}

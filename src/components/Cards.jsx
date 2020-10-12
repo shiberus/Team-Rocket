@@ -3,7 +3,7 @@ import style from './styles/Cards.module.css'
 
 import Card from './Card.jsx'
 
-export default function Cards({pokemons, setMeat, setProfit, evil}){
+export default function Cards({pokemons, setTeam, setProfit, evil}){
   return(
     <div className={style.cards}>
       {
@@ -16,7 +16,7 @@ export default function Cards({pokemons, setMeat, setProfit, evil}){
           ability={p.ability}
           name={p.name}
           img={p.img}
-          setMeat={() => setMeat(p.key, p.weight)}
+          setTeam={() => setTeam(p.key)}
           setProfit={() => setProfit(p.key, p.price)}
         />)
       }

@@ -8,12 +8,13 @@ import Shop from './components/shop/Shop.jsx'
 
 function App() {
   const [profit, setProfit] = useState(0)
+  const [team, setTeam] = useState([])
   return (
     <Router>
       <Route path='/' component={NavBar}/>
       <Route path='/about' component={About}/>
-      <Route path='/shop' component={Shop}/>
-      <Route path='/trafficking' render={()=> <Trafficking profit={profit} setProfit={setProfit}/>}/>
+      <Route path='/shop' render={()=> <Shop team={team}/>}/>
+      <Route path='/trafficking' render={()=> <Trafficking profit={profit} setProfit={setProfit} team={team} setTeam={setTeam} />}/>
     </Router>
     
   );

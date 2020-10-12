@@ -3,10 +3,9 @@ import style from './styles/Trafficking.module.css'
 import TraficNavBar from './trafficNavBar.jsx'
 import Cards from './Cards.jsx'
 
-export default function Trafficking({profit, setProfit}){
+export default function Trafficking({profit, setProfit, team, setTeam}){
   const [pokemons, setPokemon] = useState([])
-  const [meat, setMeat] = useState(0)
-  const [evil, setEvil] = useState(0)
+  const [evil, setEvil] = useState(5)
   function onSearch(pokemon, k){
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}/`
     fetch(url)
@@ -35,14 +34,14 @@ export default function Trafficking({profit, setProfit}){
     setProfit(actual => actual += price);
   }
 
-  function onKill(key, weight) {
+  function onRecruit(key) {
+    setTeam(actual => actual = [...actual, pokemons.filter(p => p.key === key)[0]]);
     setPokemon(oldPokemon => oldPokemon.filter(p => p.key !== key));
-    setMeat(actual => actual += weight);
   }
 
   function sellMeat(){
-    setProfit(actual => actual += Math.floor(meat/1.5))
-    setMeat(0)
+    setProfit(actual => actual += Math.floor(team/1.5))
+    setTeam(0)
   }
 
   function activateEvil(){
@@ -52,8 +51,8 @@ export default function Trafficking({profit, setProfit}){
 
   return(
     <div className={style.Trafficking}>
-      <TraficNavBar onSearch={onSearch} profit={profit} meat={meat} sellMeat={sellMeat} evil={evil} setEvil={activateEvil}/>
-      <Cards pokemons={pokemons} setMeat={onKill} setProfit={onSell} evil={evil}/>
+      <TraficNavBar onSearch={onSearch} profit={profit} team={team} sellMeat={sellMeat} evil={evil} setEvil={activateEvil}/>
+      <Cards pokemons={pokemons} setTeam={onRecruit} setProfit={onSell} evil={evil}/>
     </div>
   )
 }
